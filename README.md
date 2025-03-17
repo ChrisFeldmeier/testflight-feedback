@@ -195,8 +195,6 @@ I'm happy to share the progress on this topic and I know there's still a lot to 
 
 Please follow the [Code of Conduct](https://github.com/ChrisFeldmeier/testflight-feedback/blob/main/CODE_OF_CONDUCT.md).
 
-> Thanks for contribution in the early stages to [@benrudhart](https://github.com/benrudhart) 🙏🏼
-
 
 ## License
 
