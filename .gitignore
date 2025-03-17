@@ -1,8 +1,6 @@
 # Swift build directory
 .build/
 
-# GitHub Actions related
-.action/
 
 # Xcode
 #
