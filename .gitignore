@@ -1,0 +1,44 @@
+# Swift build directory
+.build/
+
+# GitHub Actions related
+.action/
+
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## User settings
+xcuserdata/
+
+## compatibility with Xcode
+*.xcodeproj
+*.xcworkspace
+
+## Swift Package Manager
+Package.resolved
+.swiftpm/
+
+## macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+Packages/
+Package.pins
+.build/
+DerivedData/
+
+# CocoaPods
+Pods/ 

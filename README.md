@@ -8,7 +8,7 @@
 
 This tool is designed to ease management of user feedback received through TestFlight. The main purpose is to fetch the feedback and create a GitHub Issue for each, so it can be handled better (assigned to other people, boards, teams, etc.).
 
-> The tool has originated from [a discussion started within the fastlane repository](https://github.com/fastlane/fastlane/discussions/17790), so the solution currently have dependency on [fastlane](https://github.com/fastlane/fastlane) as you need it to obtain cookies required to authorize the fetch request.
+The solution currently have dependency on [fastlane](https://github.com/fastlane/fastlane) as you need it to obtain cookies required to authorize the fetch request.
 
 Currently only GitHub Issues are supported as an output - if you'd like to have any other integration, feel free to [contribute](#contribution)) 🙏🏻
 
