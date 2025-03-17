@@ -115,15 +115,36 @@ final class GitHubRepository {
 
     private func uploadScreenshotToRepository(_ imageURL: URL, fileName: String) async throws -> URL {
         let (imageData, _) = try await URLSession.shared.data(for: URLRequest(url: imageURL))
-        let body = RepositoryContentBody(message: "Adding screenshot \(fileName)",
-                                         content: imageData.base64EncodedString())
-        let request = try URLRequest(url: try GitHubHelper.screenshotsFolderURL().appendingPathComponent(fileName + ".jpg"), method: .put, body: body)
+        
+        // Check if file already exists and get its SHA
+        let filePath = fileName + ".jpg"
+        let fileSha = try? await getExistingFileSha(filePath)
+        
+        let body = RepositoryContentBody(
+            message: "Adding screenshot \(fileName)",
+            content: imageData.base64EncodedString(),
+            sha: fileSha
+        )
+        
+        let request = try URLRequest(url: try GitHubHelper.screenshotsFolderURL().appendingPathComponent(filePath), method: .put, body: body)
         let response: RepositoryContentResponseModel = try await GitHubNetworking.perform(dataRequest: request)
         var components = URLComponents(url: response.content.html_url, resolvingAgainstBaseURL: false)!
         components.queryItems = [
             .init(name: "raw", value: "true")
         ]
         return components.url!
+    }
+    
+    // Helper method to get SHA of existing file
+    private func getExistingFileSha(_ fileName: String) async throws -> String? {
+        let request = URLRequest(url: try GitHubHelper.screenshotsFolderURL().appendingPathComponent(fileName))
+        do {
+            let content: RepositoryContent = try await GitHubNetworking.perform(dataRequest: request)
+            return content.sha
+        } catch {
+            // File doesn't exist yet, return nil
+            return nil
+        }
     }
 }
 

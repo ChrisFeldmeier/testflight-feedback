@@ -4,4 +4,11 @@ struct RepositoryContentBody: Encodable {
 
     let message: String
     let content: String
+    let sha: String?
+    
+    init(message: String, content: String, sha: String? = nil) {
+        self.message = message
+        self.content = content
+        self.sha = sha
+    }
 }
