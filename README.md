@@ -176,6 +176,16 @@ jobs:
 
 > Runs automatically every Monday at 6:00 (UTC)
 
+# Example local var file:
+
+```
+export FEEDBACK_APP_ID='673....'
+export FEEDBACK_ISSUER_ID='8a69b74a-1437-....'
+export FASTLANE_SESSION='---\n- !rub...... *1\n'
+export FEEDBACK_BACKLOG_COLUMN_ID=b6a...
+export FEEDBACK_REPOSITORY_PATH='yourorgname/yourreponame'
+export GITHUB_TOKEN='github_pat_11ABLJC6A00cL....'
+```
 
 ## Output ticket
 
