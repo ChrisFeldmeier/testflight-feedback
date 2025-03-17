@@ -130,7 +130,7 @@ jobs:
 
     steps:
     - name: Fetch feedback
-      uses: ChrisFeldmeier/testflight-feedback@1.0.3
+      uses: ChrisFeldmeier/testflight-feedback@1.0.5
       env:
         FASTLANE_SESSION: ${{ secrets.FASTLANE_SESSION }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -166,7 +166,7 @@ jobs:
 
     steps:
     - name: Clear screenshots
-      uses: ChrisFeldmeier/testflight-feedback@1.0.3
+      uses: ChrisFeldmeier/testflight-feedback@1.0.5
       with:
         clearScreenshotsOnly: true
       env:
